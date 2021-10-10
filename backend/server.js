@@ -1,19 +1,20 @@
 const express = require("express")
 const app = express()
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
 const productRouter = require("./routers/productRouter");
 const userRouter = require("./routers/userRouter");
 const port = 5000
+
+dotenv.config();
+
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 mongoose.connect('mongodb://localhost:27017/IIBSO')
 
 app.use('/api/users', userRouter);
 app.use('/api/products',productRouter);
-
-
-
-
 
 
 

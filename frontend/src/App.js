@@ -6,6 +6,7 @@ import ProductScreen from './Screens/ProductScreen';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CartScreen from './Screens/CartScreen';
+import SigninScreen from './Screens/SigninScreen';
 function App() {
   return (
     <BrowserRouter>
@@ -13,6 +14,7 @@ function App() {
         <Navbar mdb={mdb}/>
         <Route path="/cart/:id?" component={CartScreen} ></Route>
         <Route path="/product/:id" component={ProductScreen}></Route>
+        <Route path="/signin" component={SigninScreen}></Route>
         <Route path="/" component={HomeScreen} exact></Route>
         <Footer/>
       </div>
